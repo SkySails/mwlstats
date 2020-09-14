@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      //Assuming your components/utilities live in ./src
+      //Update this path as necessary
+      "@Theme/*": ["./src/theme/*"],
+      "@Hooks": ["./src/hooks/"],
+      "@Context/*": ["./src/context/*"],
+      "@Layout/*": ["./src/layout/*"],
+      "@Constants/*": ["./src/constants/*"],
+      "@Components/*": ["./src/components/*"],
+      "@Icons": ["./src/icons/"]
+    }
+  }
+}

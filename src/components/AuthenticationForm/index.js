@@ -5,7 +5,17 @@ import styled from "styled-components";
 import { ShareOutline } from "@Icons";
 import { device } from "@Constants/devices";
 
-export default function AuthenticationForm({ type }) {
+export default function AuthenticationForm({ type, callback }) {
+  const onSubmit = (options) => {
+    try {
+      if (type === "login") {
+      } else if (type === "signup") {
+      }
+    } catch (e) {
+      console.error("The following error ocurred on form submit: ", e);
+    }
+  };
+
   switch (type) {
     case "login": {
       return (
@@ -20,16 +30,32 @@ export default function AuthenticationForm({ type }) {
           </button>
           <div>
             <span>Not registered?</span>
-            <Link href="#">
+            <Link href="/signup">
               <a>Create a new account</a>
             </Link>
           </div>
         </FormContainer>
       );
-      break;
     }
     case "signup": {
-      break;
+      return (
+        <FormContainer>
+          <label htmlFor="email">Email</label>
+          <input type="email" name="email" id="email" />
+          <label htmlFor="password">Password</label>
+          <input type="password" name="password" id="password" />
+          <button className="ripple">
+            Sign up
+            <ShareOutline />
+          </button>
+          <div>
+            <span>Already got an account?</span>
+            <Link href="/login">
+              <a>Login</a>
+            </Link>
+          </div>
+        </FormContainer>
+      );
     }
     default: {
       break;

@@ -6,7 +6,7 @@ import AuthLayout from "@Layout/AuthLayout";
 import AuthenticationForm from "@Components/AuthenticationForm";
 import ThemeToggle from "@Components/ThemeToggle";
 
-export default function signin() {
+export default function login() {
   return (
     <AuthLayout>
       <main>

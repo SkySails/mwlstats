@@ -7,6 +7,7 @@
       "@Theme/*": ["./src/theme/*"],
       "@Hooks": ["./src/hooks/"],
       "@Context/*": ["./src/context/*"],
+      "@SVG/*": ["./src/svg/*"],
       "@Layout/*": ["./src/layout/*"],
       "@Constants/*": ["./src/constants/*"],
       "@Components/*": ["./src/components/*"],

@@ -11,8 +11,12 @@ export default {
     light: "#60A9FF",
     dark: "#001024",
   },
+  "bg-contrast": {
+    light: "#000",
+    dark: "#fff",
+  },
   "bg-form": {
-    light: "#F0F6FE",
+    light: "#F0F5FA",
     dark: "#002F6B",
   },
   "bg-form-autofill": {
@@ -23,16 +27,16 @@ export default {
     light: "#B9D5FA",
     dark: "#1567D1",
   },
-  "boxshadow-form": {
+  "boxshadow-select": {
     light: "rgba(14, 149, 227, 0.3)",
-    dark: "rgba(14, 149, 227, 0.8)",
+    dark: "rgba(14, 149, 227, 0.7)",
   },
   "text-primary": {
     light: "#002959",
     dark: "#CADBF1",
   },
   "text-secondary": {
-    light: "#fff",
+    light: "#000",
     dark: "#fff",
   },
 };

@@ -21,6 +21,7 @@ const AuthContainer = styled.div`
     background: var(--bg-primary);
     color: var(--text-primary);
     transition: all 0.2s;
+    overflow-x: hidden;
   }
 
   aside {
@@ -36,6 +37,16 @@ const AuthContainer = styled.div`
     background: var(--bg-secondary);
     color: var(--text-secondary);
     transition: all 0.2s;
+    overflow: hidden;
+    position: relative;
+
+    #bg-graphics {
+      position: absolute;
+      width: 60%;
+      top: 0px;
+      right: 0px;
+      transform: translate(40%, -50%);
+    }
 
     article {
       width: 70%;

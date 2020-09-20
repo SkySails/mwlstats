@@ -5,6 +5,7 @@ import { useColorScheme } from "@Context/ThemeContext";
 import AuthLayout from "@Layout/AuthLayout";
 import AuthenticationForm from "@Components/AuthenticationForm";
 import ThemeToggle from "@Components/ThemeToggle";
+import MemoBackgroundGraphics from "@SVG/BackgroundGraphics";
 
 export default function signup() {
   return (
@@ -14,7 +15,8 @@ export default function signup() {
         <StyledThemeToggle />
       </main>
       <aside>
-        <article>
+        <MemoBackgroundGraphics />
+        <article style={{ color: "white" }}>
           <img src="img/cards.png" />
           <span className="title">Flights at a glance</span>
           <p>

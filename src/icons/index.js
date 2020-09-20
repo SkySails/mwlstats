@@ -1,2 +1,9 @@
 export { default as ShareOutline } from "./ShareOutline";
 export { default as SunMoon } from "./SunMoon";
+export { default as AlertOutline } from "./AlertOutline";
+export { default as Person } from "./Person";
+export { default as Mail } from "./Mail";
+export { default as Lock } from "./Lock";
+export { default as Facebook } from "./Facebook";
+export { default as Google } from "./Google";
+export { default as NextArrow } from "./NextArrow";

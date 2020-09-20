@@ -37,41 +37,43 @@ export default function AuthenticationForm({ type, callback }) {
   switch (type) {
     case "login": {
       return (
-        <FormContainer onSubmit={handleSubmit(onSubmit)} className="max-width">
-          <h1>Sign in</h1>
-          <EmailInput
-            name="email"
-            id="email"
-            autoComplete="email"
-            error={errors.email}
-            ref={register({
-              required: "An email adress is required",
-              pattern: {
-                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                message: "Invalid email address",
-              },
-            })}
-          />
-          <PasswordInput
-            name="password"
-            id="password"
-            autoComplete="password"
-            error={errors.password}
-            ref={register({
-              required: "A password is required",
-            })}
-          />
-          <SubmitButton className="ripple">
-            Sign in
-            <ShareOutline />
-          </SubmitButton>
-          <ProviderSignin mode="signin" />
-          <div className="auth-nav">
-            <span>Not registered?</span>
-            <Link href="/signup">
-              <a>Create a new account</a>
-            </Link>
-          </div>
+        <FormContainer className="max-width">
+          <form onSubmit={handleSubmit(onSubmit)} style={{ width: "100%" }}>
+            <h1>Sign in</h1>
+            <EmailInput
+              name="email"
+              id="email"
+              autoComplete="email"
+              error={errors.email}
+              ref={register({
+                required: "An email adress is required",
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: "Invalid email address",
+                },
+              })}
+            />
+            <PasswordInput
+              name="password"
+              id="password"
+              autoComplete="password"
+              error={errors.password}
+              ref={register({
+                required: "A password is required",
+              })}
+            />
+            <SubmitButton className="ripple">
+              Sign in
+              <ShareOutline />
+            </SubmitButton>
+            <ProviderSignin mode="signin" />
+            <div className="auth-nav">
+              <span>Not registered?</span>
+              <Link href="/signup">
+                <a>Create a new account</a>
+              </Link>
+            </div>
+          </form>
         </FormContainer>
       );
     }

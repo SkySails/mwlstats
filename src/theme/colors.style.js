@@ -4,7 +4,7 @@ export default {
     dark: "#0067EE",
   },
   "bg-primary": {
-    light: "#fefefe",
+    light: "#F8F9FB",
     dark: "#001D40",
   },
   "bg-secondary": {

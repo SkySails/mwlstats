@@ -6,6 +6,7 @@ import AuthLayout from "@Layout/AuthLayout";
 import AuthenticationForm from "@Components/AuthenticationForm";
 import ThemeToggle from "@Components/ThemeToggle";
 import MemoBackgroundGraphics from "@SVG/BackgroundGraphics";
+import Cards from "@SVG/Cards";
 
 export default function signup() {
   return (
@@ -17,7 +18,7 @@ export default function signup() {
       <aside>
         <MemoBackgroundGraphics />
         <article style={{ color: "white" }}>
-          <img src="img/cards.png" />
+          <StyledCards />
           <span className="title">Flights at a glance</span>
           <p>
             Throw yourself back in time by exploring your previous flightlogs!
@@ -34,4 +35,8 @@ const StyledThemeToggle = styled(ThemeToggle)`
   position: absolute;
   top: 20px;
   left: 20px;
+`;
+
+const StyledCards = styled(Cards)`
+  width: 100%;
 `;

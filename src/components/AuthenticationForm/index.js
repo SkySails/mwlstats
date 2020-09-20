@@ -145,6 +145,7 @@ const FormContainer = styled.div`
     font-size: 1em;
     outline: none;
     transition: all 0.2s;
+    background-clip: padding-box;
 
     &:focus {
       box-shadow: 0 0 0 3px var(--primary-color);
@@ -159,6 +160,7 @@ const FormContainer = styled.div`
       -webkit-text-fill-color: var(--text-primary) !important;
       caret-color: var(--text-primary);
       background-color: transparent;
+      background-clip: padding-box;
     }
     &:-webkit-autofill:focus {
       border-radius: 7px;
@@ -177,12 +179,17 @@ const FormContainer = styled.div`
     }
   }
 
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .auth-nav {
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    margin-top: 20px;
     font-size: 0.8em;
 
     @media ${device.laptop} {

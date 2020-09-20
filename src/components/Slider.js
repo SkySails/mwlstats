@@ -116,7 +116,7 @@ const SlideNav = styled.nav`
     &::before {
       content: attr(data-index);
       position: absolute;
-      margin-top: -5px;
+      margin-top: -7px;
       margin-left: 50%;
       height: 20px;
       width: 20px;
@@ -124,6 +124,9 @@ const SlideNav = styled.nav`
       display: flex;
       align-items: center;
       justify-content: center;
+      color: white;
+      font-weight: bold;
+      padding: 2px;
 
       background: var(--primary-color);
       transform: translateX(-50%);

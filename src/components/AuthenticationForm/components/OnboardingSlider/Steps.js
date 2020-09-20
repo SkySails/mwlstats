@@ -6,6 +6,9 @@ import { NextArrow } from "@Icons";
 import EmailInput from "../EmailInput";
 import PasswordInput from "../PasswordInput";
 import ProviderSignin from "../ProviderSignin";
+import Profile from "@SVG/Profile";
+import Airplane from "@SVG/Airplane";
+import ThemedGradient from "@Components/ThemedGradient";
 
 const nextButton = (e, slider) => {
   e.preventDefault();
@@ -40,7 +43,10 @@ export function Step1({ className, slider, form }) {
   const { register, errors, trigger } = form;
 
   return (
-    <form className={className}>
+    <form className={className} style={{ position: "relative" }}>
+      <ThemedGradient>
+        <ProfileGraphics />
+      </ThemedGradient>
       <h1>Account details</h1>
       <p>
         Choose wether to sign up using email and password, or a provider of your
@@ -89,7 +95,14 @@ export function Step2({ className, form, slider }) {
   const { register, errors, handleSubmit, trigger } = form;
 
   return (
-    <form className={className} onSubmit={handleSubmit(onSubmit)}>
+    <form
+      className={className}
+      onSubmit={handleSubmit(onSubmit)}
+      style={{ position: "relative" }}
+    >
+      <ThemedGradient>
+        <AirplaneGraphics />
+      </ThemedGradient>
       <h1>myWebLog details</h1>
       <p>
         To get access to your statistics, mwlStats needs to connect to your{" "}
@@ -147,4 +160,18 @@ export default {
 
 const StepContainer = styled.div`
   width: 100%;
+`;
+
+const ProfileGraphics = styled(Profile)`
+  opacity: 0.8;
+  width: 240px;
+  margin: 0 auto;
+  z-index: 1;
+`;
+
+const AirplaneGraphics = styled(Airplane)`
+  opacity: 0.8;
+  width: 250px;
+  margin: 0 auto;
+  z-index: 1;
 `;

@@ -11,6 +11,9 @@
       "@Layout/*": ["./src/layout/*"],
       "@Constants/*": ["./src/constants/*"],
       "@Components/*": ["./src/components/*"],
+      "@Animations/*": ["./src/animations/*"],
+      "@HOC/*": ["./src/HOC/*"],
+      "@Services/*": ["./src/services/*"],
       "@Icons": ["./src/icons/"]
     }
   }

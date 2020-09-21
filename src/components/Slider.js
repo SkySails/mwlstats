@@ -5,7 +5,7 @@ export default class Slider extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      step: 0,
+      step: props.initialSlide || 0,
     };
   }
 
@@ -55,15 +55,10 @@ export default class Slider extends Component {
         </div>
         <SlideNav>
           {React.Children.map(this.props.children, (child, index) => (
-            <a
-              href={`#step-${index}`}
+            <div
               style={{ opacity: this.state.step === index ? 1 : 0.4 }}
               data-index={index + 1}
-              onClick={(e) => {
-                e.preventDefault();
-                this.setSlide(index);
-              }}
-            ></a>
+            />
           ))}
         </SlideNav>
       </SliderContainer>
@@ -75,6 +70,18 @@ const SliderContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  opacity: 0;
+  animation: opacity 0.5s forwards;
+
+  @keyframes opacity {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
 
   .slides {
     display: flex;
@@ -105,13 +112,14 @@ const SlideNav = styled.nav`
   flex-direction: row;
   align-items: center;
 
-  a {
+  div {
     flex: 1;
     height: 10px;
     border-radius: 5px;
     background: var(--primary-color);
     transition: 0.4s;
     position: relative;
+    cursor: default;
 
     &::before {
       content: attr(data-index);
@@ -130,10 +138,6 @@ const SlideNav = styled.nav`
 
       background: var(--primary-color);
       transform: translateX(-50%);
-    }
-
-    &:hover {
-      filter: brightness(120%);
     }
 
     &:not(:first-child) {

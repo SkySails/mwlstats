@@ -1,8 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import { Google, Facebook } from "@Icons";
+import { useAuth } from "@Context/AuthContext";
 
 export default function ProviderSignin({ mode }) {
+  const { signupWithGoogle, signinWithProvider } = useAuth();
+
   return (
     <FormSection>
       <span>
@@ -11,7 +14,17 @@ export default function ProviderSignin({ mode }) {
           : "Get a headstart by signing in with"}
       </span>
       <div className="providers">
-        <ProviderButton id="google-siginin" onClick={(e) => e.preventDefault()}>
+        <ProviderButton
+          id="google-siginin"
+          onClick={(e) => {
+            e.preventDefault();
+            if (mode === "signin") {
+              signinWithProvider("google");
+            } else {
+              signupWithGoogle();
+            }
+          }}
+        >
           <Google />
           Google
         </ProviderButton>

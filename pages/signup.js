@@ -1,14 +1,13 @@
 import React from "react";
-import { useDarkMode } from "@Hooks";
 import styled from "styled-components";
-import { useColorScheme } from "@Context/ThemeContext";
 import AuthLayout from "@Layout/AuthLayout";
 import AuthenticationForm from "@Components/AuthenticationForm";
 import ThemeToggle from "@Components/ThemeToggle";
 import MemoBackgroundGraphics from "@SVG/BackgroundGraphics";
 import Cards from "@SVG/Cards";
+import RedirectRoute from "@HOC/RedirectRoute";
 
-export default function signup() {
+function signup() {
   return (
     <AuthLayout>
       <main>
@@ -30,6 +29,8 @@ export default function signup() {
     </AuthLayout>
   );
 }
+
+export default RedirectRoute(signup);
 
 const StyledThemeToggle = styled(ThemeToggle)`
   position: absolute;

@@ -7,8 +7,9 @@ import AuthenticationForm from "@Components/AuthenticationForm";
 import ThemeToggle from "@Components/ThemeToggle";
 import MemoBackgroundGraphics from "@SVG/BackgroundGraphics";
 import Cards from "@SVG/Cards";
+import RedirectRoute from "@HOC/RedirectRoute";
 
-export default function login() {
+function login() {
   return (
     <AuthLayout>
       <main>
@@ -30,6 +31,8 @@ export default function login() {
     </AuthLayout>
   );
 }
+
+export default RedirectRoute(login);
 
 const StyledThemeToggle = styled(ThemeToggle)`
   position: absolute;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 
 import styled from "styled-components";
@@ -12,33 +12,29 @@ import { SubmitButton } from "@Components/Common";
 import { useRouter } from "next/router";
 import OnboardingSlider from "./components/OnboardingSlider";
 import { useForm } from "react-hook-form";
+import { useAuth } from "@Context/AuthContext";
 
 export default function AuthenticationForm({ type, callback }) {
-  const Router = useRouter();
+  const [isFetching, setIsFetching] = useState(false);
+  const { signin } = useAuth();
   const { register, errors, handleSubmit } = useForm();
 
-  const onSubmit = (options) => {
-    try {
-      if (type === "login") {
-        console.log("Logged in!", options);
-        if (
-          options.email === "malte@skyfoxinteractive.com" &&
-          options.password === "Maltehall12"
-        )
-          Router.push("/app/dashboard");
-      } else if (type === "signup") {
-        console.log("Signed up!", options);
-      }
-    } catch (e) {
+  const onSubmitSignin = (opt) => {
+    setIsFetching(true);
+    signin(opt.email, opt.password).catch((e) => {
       console.error("The following error ocurred on form submit:", e);
-    }
+      setIsFetching(false);
+    });
   };
 
   switch (type) {
     case "login": {
       return (
         <FormContainer className="max-width">
-          <form onSubmit={handleSubmit(onSubmit)} style={{ width: "100%" }}>
+          <form
+            onSubmit={handleSubmit(onSubmitSignin)}
+            style={{ width: "100%" }}
+          >
             <h1>Sign in</h1>
             <EmailInput
               name="email"
@@ -98,6 +94,8 @@ export default function AuthenticationForm({ type, callback }) {
 }
 
 const FormContainer = styled.div`
+  padding: 15% 0;
+
   &.max-width {
     width: 90%;
     max-width: 350px;
@@ -191,6 +189,7 @@ const FormContainer = styled.div`
     justify-content: center;
     font-weight: bold;
     font-size: 0.8em;
+    margin-top: 20px;
 
     @media ${device.laptop} {
       position: absolute;

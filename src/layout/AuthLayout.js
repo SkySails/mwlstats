@@ -7,7 +7,7 @@ export default function AuthLayout({ children }) {
 }
 
 const AuthContainer = styled.div`
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: row;
 

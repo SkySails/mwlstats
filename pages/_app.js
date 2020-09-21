@@ -1,11 +1,14 @@
 import "../styles/globals.scss";
 import ThemeProvider from "@Context/ThemeContext";
+import { AuthProvider } from "@Context/AuthContext";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ThemeProvider>
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <AuthProvider>
+      <ThemeProvider>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </AuthProvider>
   );
 }
 

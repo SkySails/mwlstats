@@ -30,6 +30,34 @@ export const SubmitButton = styled.button`
   }
 `;
 
+export const PrimaryButton = styled.button`
+  height: 45px;
+  padding: 0 30px;
+  background: ${(props) => props.color || "var(--primary-color)"};
+  color: ${(props) => (props.color ? "var(--primary-color)" : "white")};
+  font-size: 1em;
+  border: none;
+  border-radius: 7px;
+  font-family: "Nunito";
+  font-weight: bold;
+  cursor: pointer;
+`;
+
+export const SecondaryButton = styled.button`
+  height: 45px;
+  padding: 0 30px;
+  background: transparent;
+  color: ${(props) => (props.color ? "var(--primary-color)" : "white")};
+  font-size: 1em;
+  border: none;
+  border-radius: 7px;
+  font-family: "Nunito";
+  font-weight: bold;
+  cursor: pointer;
+  border: 2px solid
+    ${(props) => (props.color ? "var(--primary-color)" : "white")};
+`;
+
 export default {
   SubmitButton,
 };
